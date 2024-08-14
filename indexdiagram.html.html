@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Chart</title>
+    <script src="chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="250" height="80"></canvas> <!-- Ukuran kanvas lebih kecil -->
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Total Alumni 15', 'Bekerja 4', 'Wirausaha 6', 'Lainnya 5'],  <!-- Tambahkan label baru -->
+                datasets: [{
+                    label: 'Tingkat Relevansi Bidang Kerja',
+                    data: [125, 90, 75, 60],  <!-- Tambahkan data baru -->
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',  // Warna hijau untuk yang tertinggi
+                        'rgba(54, 162, 235, 0.2)',  // Warna biru untuk yang tengah
+                        'rgba(255, 206, 86, 0.2)',  // Warna kuning untuk yang kedua terendah
+                        'rgba(255, 99, 132, 0.2)'   // Warna merah untuk yang terendah
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',  // Warna hijau
+                        'rgba(54, 162, 235, 1)',  // Warna biru
+                        'rgba(255, 206, 86, 1)',  // Warna kuning
+                        'rgba(255, 99, 132, 1)'   // Warna merah
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
